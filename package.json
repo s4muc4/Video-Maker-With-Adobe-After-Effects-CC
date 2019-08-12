@@ -18,6 +18,8 @@
   "homepage": "https://github.com/s4muc4/video-maker#readme",
   "dependencies": {
     "algorithmia": "^0.3.10",
+    "gaxios": "^2.0.1",
+    "googleapis": "^42.0.0",
     "readline-sync": "^1.4.10",
     "sbd": "^1.0.16",
     "watson-developer-cloud": "^4.0.1"
