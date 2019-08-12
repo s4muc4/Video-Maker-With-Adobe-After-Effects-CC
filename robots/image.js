@@ -10,6 +10,7 @@ async function robot(){
     //const imagesArray = await fetchGoogleAndReturnImagesLinks('Michael Jackson')
     //console.dir(imagesArray, { depth: null })
     //process.exit(0) 
+    //boa
 
     await fetchImagesOfAllSentences(content)
 
