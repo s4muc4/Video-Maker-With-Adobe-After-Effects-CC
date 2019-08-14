@@ -14,9 +14,16 @@ async function start(){
     await robots.image()
     await robots.video()
     await robots.youtube()
+<<<<<<< HEAD
     
   
 }
 
 start()
 
+=======
+  
+}
+
+start()
+>>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b

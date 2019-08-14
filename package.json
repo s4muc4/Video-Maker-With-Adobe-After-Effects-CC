@@ -1,0 +1,32 @@
+{
+  "name": "video-maker",
+  "version": "1.0.0",
+  "description": "Projeto para fazer videos automatizados",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s4muc4/video-maker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s4muc4/video-maker/issues"
+  },
+  "homepage": "https://github.com/s4muc4/video-maker#readme",
+  "dependencies": {
+    "algorithmia": "^0.3.10",
+    "express": "^4.17.1",
+    "gaxios": "^2.0.1",
+    "gm": "^1.23.1",
+    "googleapis": "^42.0.0",
+    "handbrake-js": "^3.0.8",
+    "image-downloader": "^3.5.0",
+    "imagemagick": "^0.1.3",
+    "readline-sync": "^1.4.10",
+    "sbd": "^1.0.16",
+    "watson-developer-cloud": "^4.0.1"
+  }
+}

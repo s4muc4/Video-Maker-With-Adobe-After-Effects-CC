@@ -16,7 +16,10 @@ const state = require('./state.js')
 
 
 async function robot (){
+<<<<<<< HEAD
     console.log('> [text-robot] Starting...')
+=======
+>>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
     const content = state.load()
 
     await fetchContentFromWikipedia(content)
@@ -28,14 +31,20 @@ async function robot (){
     state.save(content)
 
     async function fetchContentFromWikipedia(content){
+<<<<<<< HEAD
         console.log('> [text-robot] Fetching content from Wikipedia')
+=======
+>>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
         const algorithmiaAuthenticated = algorithmia(algorithmiaApiKey)
         const wikipediaAlgorithm = algorithmiaAuthenticated.algo('web/WikipediaParser/0.1.2')
         const wikipediaResponse = await wikipediaAlgorithm.pipe(content.searchTerm)
         const wikipediaContent = wikipediaResponse.get()
         
         content.sourceContentOriginal = wikipediaContent.content
+<<<<<<< HEAD
         console.log('> [text-robot] Fetching done!')
+=======
+>>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
     }
 
     function sanitizeContent(content){
@@ -80,6 +89,7 @@ async function robot (){
     }
 
     async function fetchKeywordsOfAllSentences(content){
+<<<<<<< HEAD
         console.log('> [text-robot] Starting to fetch keywords from Watson')
 
         for(const sentence of content.sentences){
@@ -89,6 +99,13 @@ async function robot (){
         }
     }
 //
+=======
+        for(const sentence of content.sentences){
+            sentence.keywords = await fetchWatsonAndReturnKeywords(sentence.text)
+        }
+    }
+
+>>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
     async function fetchWatsonAndReturnKeywords(sentence){
         return new Promise((resolve, reject)=>{
             nlu.analyze({

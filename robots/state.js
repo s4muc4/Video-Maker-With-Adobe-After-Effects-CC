@@ -2,7 +2,11 @@ const fs = require('fs')
 const contentFilePath = './content.json'
 const scriptFilePath = './content/after-effects-script.js'
 
+<<<<<<< HEAD
 //
+=======
+
+>>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
 function save (content){
     const contentString = JSON.stringify(content)
     return fs.writeFileSync(contentFilePath, contentString)
