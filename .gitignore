@@ -60,11 +60,7 @@ typings/
 # next.js build output
 .next
 
-<<<<<<< HEAD
 # credentials
-=======
-#credentials
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
 credentials/*.json
 
 content.json
@@ -75,13 +71,7 @@ content/*.js
 content/*.mov
 content/*.mp4
 Adobe After Effects Auto-Save
-<<<<<<< HEAD
 template.aep Logs
 .DS_Store
 
 //testee
-=======
-template aep Logs
-
-.DS_Store
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b

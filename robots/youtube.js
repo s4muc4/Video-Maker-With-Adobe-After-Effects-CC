@@ -7,10 +7,7 @@ const fs = require('fs')
 
 
 async function robot(){
-<<<<<<< HEAD
     console.log('> [youtube-robot] Starting...')
-=======
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
     const content = state.load()
 
     await authenticateWithOAuth()
@@ -33,11 +30,7 @@ async function robot(){
                 const app = express()
 
                 const server = app.listen(port, ()=>{
-<<<<<<< HEAD
                     console.log(`> [youtube-robot] Listening on http://localhost:${port}`)
-=======
-                    console.log(`> Listening on http://localhost:${port}`)
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
 
                     resolve({
                         app,
@@ -63,28 +56,16 @@ async function robot(){
                 access_type: 'offline',
                 scope: ['https://www.googleapis.com/auth/youtube']
             })
-<<<<<<< HEAD
             console.log(`> [youtube-robot] Please give your consent: ${consentUrl}`)
-=======
-            console.log(`> Please give your consent: ${consentUrl}`)
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
         }
 
         async function waitForGoogleCallback(webServer){
             return new Promise((resolve, reject)=>{
-<<<<<<< HEAD
                 console.log('> [youtube-robot] Waiting for user consent...')
 
                 webServer.app.get('/oauth2callback', (req, res)=>{
                     const authCode = req.query.code
                     console.log(`> [youtube-robot] Consent given: ${authCode}`)
-=======
-                console.log('>Waiting for user consent...')
-
-                webServer.app.get('/oauth2callback', (req, res)=>{
-                    const authCode = req.query.code
-                    console.log(`> Consent given: ${authCode}`)
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
 
                     res.send('<h1> Thank You!</h1><p>Now close this tab.</p>')
                     resolve(authCode)
@@ -98,11 +79,7 @@ async function robot(){
                     if(error){
                         return reject(error)
                     }
-<<<<<<< HEAD
                     console.log('> [youtube-robot] Access tokens received: ')
-=======
-                    console.log('> Access tokens received: ')
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
                     console.log(tokens)
 
                     OAuthClient.setCredentials(tokens)
@@ -151,29 +128,17 @@ async function robot(){
                 body: fs.createReadStream(videoFilePath)
             }
         }
-<<<<<<< HEAD
         console.log('> [youtube-robot] Starting to upload the video to YouTube')
-=======
-
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
         const youtubeResponse = await youtube.videos.insert(requestParameters, {
             onUploadProgress: onUploadProgress
         })
 
-<<<<<<< HEAD
         console.log(`> [youtube-robot] Video available at: https://youtu.be/${youtubeResponse.data.id}`)
-=======
-        console.log(`> Video available at: https://youtu.be/${youtubeResponse.data.id}`)
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
         return youtubeResponse.data
 
         function onUploadProgress(event){
             const progress = Math.round((event.bytesRead/videoFileSize)*100)
-<<<<<<< HEAD
             console.log(`> [youtube-robot] ${progress}% completed`)
-=======
-            console.log(`> ${progress}% completed`)
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
         }
     }
 
@@ -189,12 +154,8 @@ async function robot(){
             }
         }
         const youtubeResponse = await youtube.thumbnails.set(requestParameters)
-<<<<<<< HEAD
         console.log(`> [youtube-robot] Thumbnail uploaded`)
         console.log('--Finished!!! Video available--')
-=======
-        console.log(`> Thumbnail uploaded`)
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
     }
 }
 

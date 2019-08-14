@@ -7,10 +7,7 @@ const path = require('path')
 const rootPath = path.resolve(__dirname, '..') 
 
 async function robot(){
-<<<<<<< HEAD
     console.log('> [video-robot] Starting...')
-=======
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
     const content = state.load()
 
     await convertAllImages(content)
@@ -18,11 +15,7 @@ async function robot(){
     await createYouTubeThumbnail()
     await createAfterEffectsScript(content)
     await renderVideoWithAfterEffects()
-<<<<<<< HEAD
 //
-=======
-
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
     state.save(content)
 
     async function convertAllImages(content){
@@ -62,11 +55,7 @@ async function robot(){
                     if(error){
                         return reject(error)
                     }
-<<<<<<< HEAD
                     console.log(`> [video-robot] Image converted: ${outputFile}`)
-=======
-                    console.log(`>Image converted: ${inputFile}`)
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
                     resolve()
                 })
         })
@@ -125,11 +114,7 @@ async function robot(){
                         return reject(error)
                     }
 
-<<<<<<< HEAD
                     console.log(`> [video-robot] Sentence created: ${outputFile}`)
-=======
-                    console.log(`> Sentence created: ${outputFile}`)
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
                     resolve()
                 })
         })
@@ -142,11 +127,7 @@ async function robot(){
                     if(error){
                         return reject(error)
                     }
-<<<<<<< HEAD
                     console.log('> [video-robot] YouTube thumbnail created')
-=======
-                    console.log('> Creating YouTube thumbnail')
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
                     resolve()
                 })
         })
@@ -163,11 +144,7 @@ async function robot(){
             const destinationFilePath = `${rootPath}/content/output.mov`
             const destinationFilePathConverted = `${rootPath}/content/output.mp4`
 
-<<<<<<< HEAD
             console.log('> [video-robot] Starting After Effects')
-=======
-            console.log('> Starting After Effects')
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
 
             const aerender = spawn(aerenderFilePath,[
                 '-comp', 'main',
@@ -180,11 +157,7 @@ async function robot(){
             })
 
             aerender.on('close', ()=>{
-<<<<<<< HEAD
                 console.log('> [video-robot] After Effects closed')
-=======
-                console.log('>After Effects closed')
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
                 resolve()
                 console.log("> [video-robot] Convert to .mp4")
                 hbjs

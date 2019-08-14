@@ -1,8 +1,4 @@
 const imageDownloader = require('image-downloader')
-<<<<<<< HEAD
-=======
-const gm = require('gm').subClass({imageMagick: true})
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
 const google =require('googleapis').google
 const customSearch = google.customsearch('v1')
 const state = require('./state.js')
@@ -10,10 +6,7 @@ const state = require('./state.js')
 const googleSearchCredentials = require('../credentials/google-search.json')
 
 async function robot(){
-<<<<<<< HEAD
     console.log('> [image-robot] Starting...')
-=======
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
     const content = state.load()
     
    
@@ -23,7 +16,6 @@ async function robot(){
     state.save(content)
 
     async function fetchImagesOfAllSentences(content){
-<<<<<<< HEAD
         for (let sentenceIndex = 0; sentenceIndex < content.sentences.length;sentenceIndex++){
             let query
 
@@ -38,13 +30,6 @@ async function robot(){
             
             content.sentences[sentenceIndex].images = await fetchGoogleAndReturnImagesLinks(query)
             content.sentences[sentenceIndex].googleSearchQuery = query
-=======
-        for (const sentence of content.sentences){
-            const query = `${content.searchTerm} ${sentence.keywords[0]}`
-            sentence.images = await fetchGoogleAndReturnImagesLinks(query)
-
-            sentence.googleSearchQuery = query
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
         }
     }
 
@@ -76,7 +61,6 @@ async function robot(){
 
                 try{
                     if(content.downloadedImages.includes(imageUrl)){
-<<<<<<< HEAD
                         throw new Error('Image already downloaded')
                     }
                     await downloadAndSave(imageUrl, `${sentenceIndex}-original.png`)
@@ -85,16 +69,6 @@ async function robot(){
                     break
                 }catch(error){
                     console.log(`> [image-robot] [${sentenceIndex}][${imageIndex}] Error download (${imageUrl}): ${error}`)
-=======
-                        throw new Error('Imagem já foi baixada')
-                    }
-                    await downloadAndSave(imageUrl, `${sentenceIndex}-original.png`)
-                    content.downloadedImages.push(imageUrl)
-                    console.log(`> [${sentenceIndex}][${imageIndex}] Baixou imagem com sucesso: ${imageUrl}`)
-                    break
-                }catch(error){
-                    console.log(`> [${sentenceIndex}][${imageIndex}] Erro ao baixar (${imageUrl}): ${error}`)
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
                 }
                 
             }
@@ -103,19 +77,11 @@ async function robot(){
 
     async function downloadAndSave(url, fileName){
         return imageDownloader.image({
-<<<<<<< HEAD
             url: url,
-=======
-            url, url,
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
             dest: `./content/${fileName}`
         })
     }
 
-<<<<<<< HEAD
     //
-=======
-    
->>>>>>> 5975550efc6d0c1d4c6d886e36c8d5981ae5e15b
 }
 module.exports = robot
