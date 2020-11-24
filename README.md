@@ -1,2 +1,2 @@
 # video-maker
-Projeto para fazer videos automatizados
+Projeto para produzir vídeos automatizados
